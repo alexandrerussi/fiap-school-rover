@@ -1,0 +1,14 @@
+.players {
+    width: 80vw;
+}
+
+.players div {
+    display: flex;
+    align-items: center;
+    gap: 2vh;
+    margin: 1vh 0;
+}
+
+.players div img {
+    height: 25vh;
+}
