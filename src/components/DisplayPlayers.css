@@ -1,14 +1,19 @@
-.players {
+.grid {
     width: 80vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .players div {
     display: flex;
     align-items: center;
-    gap: 2vh;
-    margin: 1vh 0;
+    gap: 5vh;
+    margin: 2vh 0;
 }
 
 .players div img {
     height: 25vh;
+    width: 25vh;
+    object-fit: cover;
+    border-radius: 50%;
 }
