@@ -11,9 +11,36 @@
     margin: 2vh 0;
 }
 
-.players div img {
+/* .players div img {
     height: 25vh;
     width: 25vh;
     object-fit: cover;
     border-radius: 50%;
+} */
+
+.player-container {
+    position: relative;
+    width: 25vh;  /* Adjust based on your mask size */
+    height: auto; /* Adjust based on your mask size */
+}
+
+.player-photo {
+    position: absolute;
+    top: 44%;  /* Adjust these to align the face correctly within the mask */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15vh;  /* Ensure the photo covers the mask area */
+    height: 15vh;
+    object-fit: cover;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.astronaut-mask {
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
 }
