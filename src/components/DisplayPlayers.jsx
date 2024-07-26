@@ -5,6 +5,7 @@ import { usePlayers } from '../context/PlayerContext';
 import soundEffect from '../assets/effect.mp3';
 import interstelarSoundEffect from '../assets/FirstStepMin.mp3';
 import astronautMask from '../assets/astronaut.png'; // Ensure the path is correct
+import fiapLogo from '../assets/fiap.png';
 
 function DisplayPlayers() {
     const { players, resetPlayers } = usePlayers();
@@ -134,6 +135,7 @@ function DisplayPlayers() {
     return (
         <div>
             <div className='grid'>
+                <img className='fiap-logo' src={fiapLogo} />
                 <div className='players'>
                     {players.map((player, index) => (
                         <div key={index}>
@@ -141,31 +143,36 @@ function DisplayPlayers() {
                                 <img src={player.photo} alt={`Foto de ${player.nickname}`} className='player-photo' />
                                 <img src={astronautMask} alt="Astronaut Mask" className="astronaut-mask" />
                             </div>
-                            <h2>{player.nickname}</h2>
-                            {assignedRovers[index] && assignedRovers[index].rover ? (
-                                <p>{`${assignedRovers[index].rover.nome} (${assignedRovers[index].rover.turma})`}</p>
-                            ) : <p>Aguardando sorteio...</p>}
+                            <div className='player-text'>
+                                <h2>{player.nickname}</h2>
+                                {assignedRovers[index] && assignedRovers[index].rover ? (
+                                    <p>{`${assignedRovers[index].rover.nome} (${assignedRovers[index].rover.turma})`}</p>
+                                ) : <p>Aguardando sorteio...</p>}
+                            </div>
                         </div>
                     ))}
                 </div>
                 <div className='sort-reel'>
+                    <h2>Equipes</h2>
                     <ul>
                         {rovers.map((rover, index) => (
-                            <li key={index} style={{ color: currentRoverIndex === index ? '#e3135c' : 'white', textAlign: 'left' }}>
+                            <li key={index} style={{ color: currentRoverIndex === index ? '#e3135c' : 'white' }}>
                                 {`${rover.turma}: ${rover.nome}`}
                                 {currentRoverIndex === index && animating && <span> ←</span>}
                             </li>
                         ))}
                     </ul>
-                    <button onClick={handleAssignRover} disabled={assignedRovers.length >= players.length || animating}>
+                    <button className='btn-sortear' onClick={handleAssignRover} disabled={assignedRovers.length >= players.length || animating}>
                         Sortear Rover
                     </button>
 
                     <div className="timer-controls">
-                        <p>Timer: {Math.floor(timerSeconds / 60)}:{("0" + (timerSeconds % 60)).slice(-2)}</p>
-                        <button onClick={handleStartTimer} disabled={timerActive}>Play</button>
-                        <button onClick={handlePauseTimer} disabled={!timerActive}>Pause</button>
-                        <button onClick={handleStopTimer}>Stop</button>
+                        <p>{Math.floor(timerSeconds / 60)}:{("0" + (timerSeconds % 60)).slice(-2)}</p>
+                        <div className='timer-controls--div'>
+                            <button onClick={handleStartTimer} disabled={timerActive}>Play</button>
+                            <button onClick={handlePauseTimer} disabled={!timerActive}>Pause</button>
+                            <button onClick={handleStopTimer}>Stop</button>
+                        </div>
                     </div>
                 </div>
             </div>

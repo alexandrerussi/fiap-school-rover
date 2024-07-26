@@ -1,14 +1,37 @@
 .grid {
     width: 80vw;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
+    position: relative;
+}
+
+.grid .fiap-logo {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    top: -30px;
+    left: calc(50% - 200px);
 }
 
 .players div {
     display: flex;
     align-items: center;
     gap: 5vh;
-    margin: 2vh 0;
+}
+
+.player-text {
+    display: block !important;
+    text-align: left;
+}
+
+.player-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1vh;
+}
+
+.player-text p {
+    font-size: 1.3rem;
+    margin-top: 1vh;
 }
 
 /* .players div img {
@@ -43,4 +66,41 @@
     width: 100%;
     height: 100%;
     z-index: 2;
+}
+
+.sort-reel {
+    border: 1px solid #e3135c;
+    padding: 0 40px 25px 40px;
+    text-align: left;
+    position: relative;
+}
+
+.sort-reel .timer-controls {
+    text-align: left;
+}
+
+.timer-controls p {
+    font-size: 5rem;
+    margin: 0;
+    font-weight: bold;
+    color: #29f4d5;
+    position: absolute;
+    top: 0;
+    right: 25px;
+}
+
+.sort-reel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.sort-reel ul li {
+    font-size: 20px;
+    margin-bottom: 4px;
+    text-align: left;
+}
+
+.btn-sortear {
+    margin-bottom: 5px;
 }
