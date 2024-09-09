@@ -73,19 +73,19 @@ function DisplayPlayers() {
                 setCurrentRoverIndex(Math.floor(Math.random() * rovers.length));
             }, 200); // Fast enough to create a "spinning" effect
 
-            sound && sound.play();
+            // sound && sound.play();
 
             const randomTimeout = Math.random() * (8000 - 4000) + 4000; // Random duration between 4 and 8 seconds
             setTimeout(() => {
                 clearInterval(interval);
-                sound && sound.pause();
+                // sound && sound.pause();
                 sound && (sound.currentTime = 0);
                 finalizeAssignment();
             }, randomTimeout);
 
             return () => {
                 clearInterval(interval);
-                sound && sound.pause();
+                // sound && sound.pause();
                 sound && (sound.currentTime = 0);
             };
         }

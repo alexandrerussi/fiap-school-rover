@@ -1,5 +1,6 @@
 .grid {
     width: 80vw;
+    max-width: 1200px;
     display: grid;
     grid-template-columns: 2fr 1fr;
     position: relative;
