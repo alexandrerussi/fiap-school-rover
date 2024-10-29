@@ -3,6 +3,13 @@ import React, { useState } from 'react';
 import './RegistrationForm.css'; // Importa o CSS para RegistrationForm
 import Webcam from 'react-webcam';
 import { usePlayers } from '../context/PlayerContext';
+import cube from '../assets/cube.webp';
+import ball from '../assets/ball.webp';
+import circle from '../assets/circle.webp';
+import cone from '../assets/cone.webp';
+import cylinder from '../assets/cylinder.webp';
+import square from '../assets/square.webp';
+import triangle_fill from '../assets/triangle-fill.webp';
 
 function RegistrationForm() {
     const { addPlayer, players, resetPlayers } = usePlayers();
@@ -28,7 +35,7 @@ function RegistrationForm() {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className='input-div'>
                     <label>Nickname:</label>
                     <input
                         type="text"
@@ -53,6 +60,13 @@ function RegistrationForm() {
                 <p>Jogadores cadastrados: {players.length}</p>
                 {/* {players.length > 0 && <p>Jogadores cadastrados: {players.length}</p>} */}
             </div>
+            <img className='img-cube' src={cube} alt="" />
+            <img className='img-ball' src={ball} alt="" />
+            <img className='img-circle' src={circle} alt="" />
+            <img className='img-cone' src={cone} alt="" />
+            <img className='img-cylinder' src={cylinder} alt="" />
+            <img className='img-square' src={square} alt="" />
+            <img className='img-triangle-fill' src={triangle_fill} alt="" />
         </div>
     );
 }

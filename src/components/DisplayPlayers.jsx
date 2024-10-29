@@ -5,7 +5,14 @@ import { usePlayers } from '../context/PlayerContext';
 import soundEffect from '../assets/effect.mp3';
 import interstelarSoundEffect from '../assets/FirstStepMin.mp3';
 import astronautMask from '../assets/astronaut.png'; // Ensure the path is correct
-import fiapLogo from '../assets/fiap.png';
+import fiapLogo from '../assets/rover_logo.svg';
+import cube from '../assets/cube.webp';
+import ball from '../assets/ball.webp';
+import circle from '../assets/circle.webp';
+import cone from '../assets/cone.webp';
+import cylinder from '../assets/cylinder.webp';
+import square from '../assets/square.webp';
+import triangle_fill from '../assets/triangle-fill.webp';
 
 function DisplayPlayers() {
     const { players, resetPlayers } = usePlayers();
@@ -135,7 +142,6 @@ function DisplayPlayers() {
     return (
         <div>
             <div className='grid'>
-                <img className='fiap-logo' src={fiapLogo} />
                 <div className='players'>
                     {players.map((player, index) => (
                         <div key={index}>
@@ -153,7 +159,8 @@ function DisplayPlayers() {
                     ))}
                 </div>
                 <div className='sort-reel'>
-                    <h2>Equipes</h2>
+                    {/* <h2>Equipes</h2> */}
+                    <img className='fiap-logo' src={fiapLogo} />
                     <ul>
                         {rovers.map((rover, index) => (
                             <li key={index} style={{ color: currentRoverIndex === index ? '#e3135c' : 'white' }}>
@@ -162,21 +169,30 @@ function DisplayPlayers() {
                             </li>
                         ))}
                     </ul>
-                    <button className='btn-sortear' onClick={handleAssignRover} disabled={assignedRovers.length >= players.length || animating}>
-                        Sortear Rover
-                    </button>
+                    <div className='botoes-controle'>
+                        <button className='btn-sortear' onClick={handleAssignRover} disabled={assignedRovers.length >= players.length || animating}>
+                            Sortear
+                        </button>
 
-                    <div className="timer-controls">
-                        <p>{Math.floor(timerSeconds / 60)}:{("0" + (timerSeconds % 60)).slice(-2)}</p>
-                        <div className='timer-controls--div'>
-                            <button onClick={handleStartTimer} disabled={timerActive}>Play</button>
-                            <button onClick={handlePauseTimer} disabled={!timerActive}>Pause</button>
-                            <button onClick={handleStopTimer}>Stop</button>
+                        <div className="timer-controls">
+                            <p>{Math.floor(timerSeconds / 60)}:{("0" + (timerSeconds % 60)).slice(-2)}</p>
+                            <div className='timer-controls--div'>
+                                <button className='btn-play' onClick={handleStartTimer} disabled={timerActive}>Play</button>
+                                <button className='btn-pause' onClick={handlePauseTimer} disabled={!timerActive}>Pause</button>
+                                <button className='btn-stop' onClick={handleStopTimer}>Stop</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <button onClick={handleBack}>Voltar</button>
+            <button className='btn-voltar' onClick={handleBack}>Voltar</button>
+            <img className='img-cube' src={cube} alt="" />
+            <img className='img-ball' src={ball} alt="" />
+            <img className='img-circle' src={circle} alt="" />
+            <img className='img-cone' src={cone} alt="" />
+            <img className='img-cylinder' src={cylinder} alt="" />
+            <img className='img-square' src={square} alt="" />
+            <img className='img-triangle-fill' src={triangle_fill} alt="" />
         </div>
     );
 }
