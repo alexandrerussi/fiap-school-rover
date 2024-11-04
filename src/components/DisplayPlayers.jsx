@@ -20,20 +20,20 @@ function DisplayPlayers() {
     const [rovers, setRovers] = useState([
         { nome: "Wall-E", turma: "7EFA" },
         { nome: "Pinguenos", turma: "7EFA" },
-        { nome: "R2D2", turma: "7EFA" },
-        { nome: "Mystic", turma: "7EFA" },
+        { nome: "Nike Tech", turma: "7EFA" },
+        { nome: "Bumbabô", turma: "7EFA" },
         { nome: "Mistérios S.A.", turma: "7EFA" },
         { nome: "BBB", turma: "7EFA" },
         { nome: "Esquadrão Squirtle", turma: "7EFB" },
         { nome: "DWL", turma: "7EFB" },
-        { nome: "Guardiões da Respiração", turma: "7EFB" },
+        { nome: "Kamado", turma: "7EFB" },
         { nome: "Capivaras", turma: "7EFB" },
-        { nome: "VERIFICAR Meu Malvado", turma: "7EFB" },
+        { nome: "Meu Projeto Favorito", turma: "7EFB" },
         { nome: "Siri Cascudo", turma: "7EFC" },
-        { nome: "VERIFICAR Robô Ana/Valen/Gui", turma: "7EFC" },
-        { nome: "Cosmic Rover", turma: "7EFC" },
+        { nome: "Star Rover", turma: "7EFC" },
+        { nome: "CRPA", turma: "7EFC" },
         { nome: "95 Queen", turma: "7EFC" },
-        { nome: "BOB BOOM", turma: "7EFC" }
+        { nome: "Bob Boom", turma: "7EFC" }
     ]);
     const [assignedRovers, setAssignedRovers] = useState([]);
     const [currentRoverIndex, setCurrentRoverIndex] = useState(0);
