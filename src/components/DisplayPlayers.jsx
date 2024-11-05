@@ -31,7 +31,7 @@ function DisplayPlayers() {
         { nome: "Meu Projeto Favorito", turma: "7EFB" },
         { nome: "Siri Cascudo", turma: "7EFC" },
         { nome: "Star Rover", turma: "7EFC" },
-        { nome: "CRPA", turma: "7EFC" },
+        { nome: "Cosmic Rover", turma: "7EFC" },
         { nome: "95 Queen", turma: "7EFC" },
         { nome: "Bob Boom", turma: "7EFC" }
     ]);
