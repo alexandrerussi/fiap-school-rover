@@ -100,15 +100,27 @@ function DisplayPlayers() {
 
     const finalizeAssignment = () => {
         if (assignedRovers.length < players.length) {
-            const selectedRover = rovers[currentRoverIndex];
-            const newRovers = rovers.filter(rover => rover.nome !== selectedRover.nome);
-            const updatedAssignedRovers = [
-                ...assignedRovers,
-                { ...players[assignedRovers.length], rover: selectedRover }
-            ];
-            setAssignedRovers(updatedAssignedRovers);
-            setRovers(newRovers);
-            setAnimating(false);
+            // Determine the appropriate turma based on the current player
+            let turma = '';
+            if (assignedRovers.length === 0) turma = '7EFA'; // First astronaut
+            else if (assignedRovers.length === 1) turma = '7EFB'; // Second astronaut
+            else if (assignedRovers.length === 2) turma = '7EFC'; // Third astronaut
+    
+            // Filter rovers based on the turma
+            const filteredRovers = rovers.filter(rover => rover.turma === turma);
+    
+            if (filteredRovers.length > 0) {
+                // Select a random rover from the filtered list
+                const selectedRover = filteredRovers[Math.floor(Math.random() * filteredRovers.length)];
+                const newRovers = rovers.filter(rover => rover.nome !== selectedRover.nome);
+                const updatedAssignedRovers = [
+                    ...assignedRovers,
+                    { ...players[assignedRovers.length], rover: selectedRover }
+                ];
+                setAssignedRovers(updatedAssignedRovers);
+                setRovers(newRovers);
+                setAnimating(false);
+            }
         }
     };
 
